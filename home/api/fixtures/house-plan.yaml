@@ -1,0 +1,228 @@
+- model: api.house
+  pk: 1
+  fields:
+    address: 1234 Eglinton Av East
+- model: api.furnace
+  pk: 1
+  fields:
+    house: 1
+    status: 'OFF'
+- model: api.room
+  pk: 1
+  fields:
+    house: 1
+    name: basement
+    description: null
+    slug: basement
+- model: api.room
+  pk: 2
+  fields:
+    house: 1
+    name: bathroom, ground floor
+    description: null
+    slug: bathroom-ground-floor
+- model: api.room
+  pk: 3
+  fields:
+    house: 1
+    name: kitchen
+    description: null
+    slug: kitchen
+- model: api.room
+  pk: 4
+  fields:
+    house: 1
+    name: hall
+    description: null
+    slug: hall
+- model: api.room
+  pk: 5
+  fields:
+    house: 1
+    name: bathroom, 1st floor
+    description: null
+    slug: bathroom-1st-floor
+- model: api.room
+  pk: 6
+  fields:
+    house: 1
+    name: bedroom 1
+    description: null
+    slug: bedroom-1
+- model: api.room
+  pk: 7
+  fields:
+    house: 1
+    name: bedroom 2
+    description: null
+    slug: bedroom-2
+- model: api.room
+  pk: 8
+  fields:
+    house: 1
+    name: bedroom 3
+    description: null
+    slug: bedroom-3
+- model: api.room
+  pk: 9
+  fields:
+    house: 1
+    name: dining room
+    description: null
+    slug: dining-room
+- model: api.light
+  pk: 1
+  fields:
+    name: lights
+    slug: lights
+    room: 1
+    status: 'OFF'
+- model: api.light
+  pk: 2
+  fields:
+    name: lights
+    slug: lights-2
+    room: 2
+    status: 'OFF'
+- model: api.light
+  pk: 3
+  fields:
+    name: lights
+    slug: lights-3
+    room: 3
+    status: 'OFF'
+- model: api.light
+  pk: 4
+  fields:
+    name: lights
+    slug: lights-4
+    room: 4
+    status: 'OFF'
+- model: api.light
+  pk: 5
+  fields:
+    name: lights
+    slug: lights-5
+    room: 5
+    status: 'OFF'
+- model: api.light
+  pk: 6
+  fields:
+    name: lights
+    slug: lights-6
+    room: 6
+    status: 'OFF'
+- model: api.light
+  pk: 7
+  fields:
+    name: lights
+    slug: lights-7
+    room: 7
+    status: 'OFF'
+- model: api.light
+  pk: 8
+  fields:
+    name: lights
+    slug: lights-8
+    room: 8
+    status: 'OFF'
+- model: api.light
+  pk: 9
+  fields:
+    name: lights
+    slug: lights-9
+    room: 9
+    status: 'OFF'
+- model: api.light
+  pk: 10
+  fields:
+    name: lights
+    slug: lights-10
+    room: 9
+    status: 'OFF'
+- model: api.sensortype
+  pk: 1
+  fields:
+    name: temperature
+    description: null
+    slug: temperature
+    display_symbol: "\xB0C"
+- model: api.sensortype
+  pk: 2
+  fields:
+    name: humidity
+    description: null
+    slug: humidity
+    display_symbol: '%'
+- model: api.sensor
+  pk: 1
+  fields:
+    name: Temp 1
+    description: null
+    provided_slug: temp-1
+    slug: temp-1
+    sensor_type: 1
+    room: 6
+- model: api.sensor
+  pk: 2
+  fields:
+    name: Temp 2
+    description: null
+    provided_slug: temp-2
+    slug: temp-2
+    sensor_type: 1
+    room: 7
+- model: api.sensor
+  pk: 3
+  fields:
+    name: Temp 3
+    description: null
+    provided_slug: temp-3
+    slug: temp-3
+    sensor_type: 1
+    room: 8
+- model: api.sensor
+  pk: 4
+  fields:
+    name: Temp 4
+    description: null
+    provided_slug: temp-4
+    slug: temp-4
+    sensor_type: 1
+    room: 9
+- model: api.sensor
+  pk: 5
+  fields:
+    name: Humidity 1
+    description: null
+    provided_slug: humidity-1
+    slug: humidity-1
+    sensor_type: 2
+    room: 6
+- model: api.sensor
+  pk: 6
+  fields:
+    name: Humidity 2
+    description: null
+    provided_slug: humidity-2
+    slug: humidity-2
+    sensor_type: 2
+    room: 7
+- model: api.sensor
+  pk: 7
+  fields:
+    name: Humidity 3
+    description: null
+    provided_slug: humidity-3
+    slug: humidity-3
+    sensor_type: 2
+    room: 8
+- model: api.sensor
+  pk: 8
+  fields:
+    name: Humidity 4
+    description: null
+    provided_slug: humidity-4
+    slug: humidity-4
+    sensor_type: 2
+    room: 9
