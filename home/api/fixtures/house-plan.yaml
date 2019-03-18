@@ -6,7 +6,7 @@
   pk: 1
   fields:
     house: 1
-    status: 'OFF'
+    status: FAN
 - model: api.room
   pk: 1
   fields:
@@ -70,6 +70,13 @@
     name: dining room
     description: null
     slug: dining-room
+- model: api.room
+  pk: 10
+  fields:
+    house: 1
+    name: outside
+    description: fake room to contain all objects outside the house
+    slug: outside
 - model: api.light
   pk: 1
   fields:
@@ -83,7 +90,7 @@
     name: lights
     slug: lights-2
     room: 2
-    status: 'OFF'
+    status: 'ON'
 - model: api.light
   pk: 3
   fields:
@@ -226,3 +233,12 @@
     slug: humidity-4
     sensor_type: 2
     room: 9
+- model: api.sensor
+  pk: 9
+  fields:
+    name: Temp 1 Outside
+    description: temperature sensor outside the building
+    provided_slug: null
+    slug: temp-1-outside
+    sensor_type: 1
+    room: 10

@@ -30,6 +30,7 @@ may or may not be the option
 * Any services and scripts which are supposed to sync / backup / clean sensor data history, loggs or
  other stored info are out of scope for the test purpose.
 * A sensor type has only one metric to measure (according to the API provided).
+* Sensors and lights can be outside the house, we put them into 'outside' room.
 
 ## Architecture
 

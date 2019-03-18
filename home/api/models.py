@@ -13,7 +13,6 @@ import model_utils.fields
 class House(models.Model):
     address = models.CharField(
         max_length=50,
-        unique=True,
         help_text='For info purposes only. Maybe useful in a cloud db where all houses are stored')
 
     def __str__(self):
@@ -30,7 +29,7 @@ class Furnace(models.Model):
     """
     STATUS = model_utils.Choices('OFF', 'FAN', 'HEAT')
 
-    house = models.ForeignKey('House', on_delete=models.CASCADE)
+    house = models.ForeignKey('House', related_name='furnaces', on_delete=models.CASCADE)
     status = model_utils.fields.StatusField(default=STATUS.OFF)
 
     def __str__(self):
@@ -49,7 +48,7 @@ class Room(models.Model):
     AutoSlugField will fix name uniqueness problem silently by adding -1, -2 etc
     """
 
-    house = models.ForeignKey('House', on_delete=models.CASCADE)
+    house = models.ForeignKey('House', related_name='rooms', on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=100, null=True, blank=True)
     slug = autoslug.AutoSlugField(populate_from='name', unique=True)
@@ -71,11 +70,11 @@ class Light(models.Model):
 
     name = models.CharField(max_length=30, default='lights')
     slug = autoslug.AutoSlugField(populate_from='name', unique=True)
-    room = models.ForeignKey('Room', on_delete=models.CASCADE)
+    room = models.ForeignKey('Room', related_name='lights', on_delete=models.CASCADE)
     status = model_utils.fields.StatusField(default=STATUS.OFF)
 
     def __str__(self):
-        return f'{self.name} in the {self.room}'
+        return f'{self.name} in the {self.room} are {self.status}'
 
 
 class SensorType(models.Model):
@@ -98,7 +97,8 @@ class Sensor(models.Model):
     """
     Sensors which can be in a room or outside house.
 
-    We may not know the exact place of the sensor.
+    We may not know the exact room of the sensor,
+     such a sensor should be placed into 'outside' room.
     Sensors data come from the third party API, hence it's important to maintain 'provided_slug'
     to be equal to the slugs in the API.
     If we need to add a sensor which is not in the 3rd party API, 'provided_slug' can be null.
@@ -113,7 +113,7 @@ class Sensor(models.Model):
     provided_slug = models.CharField(max_length=50, null=True, blank=True, unique=True)
     slug = autoslug.AutoSlugField(populate_from='name', unique=True)
     sensor_type = models.ForeignKey('SensorType', on_delete=models.PROTECT)
-    room = models.ForeignKey('Room', on_delete=models.CASCADE, null=True)
+    room = models.ForeignKey('Room', related_name='sensors', on_delete=models.CASCADE)
 
     def __str__(self):
         if self.room:
