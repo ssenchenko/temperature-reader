@@ -80,8 +80,6 @@ class Migration(migrations.Migration):
                      auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=30)),
                 ('description', models.CharField(blank=True, max_length=100, null=True)),
-                ('provided_slug', models.CharField(
-                    blank=True, max_length=50, null=True, unique=True)),
                 ('slug',
                  autoslug.fields.AutoSlugField(editable=False, populate_from='name', unique=True)),
                 ('room',

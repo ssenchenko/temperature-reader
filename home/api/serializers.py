@@ -46,7 +46,6 @@ class SensorSerializer(serializers.ModelSerializer):
             'name',
             'description',
             'slug',
-            'provided_slug',
             'sensor_type',
         )
 

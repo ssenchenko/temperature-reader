@@ -99,9 +99,8 @@ class Sensor(models.Model):
 
     We may not know the exact room of the sensor,
      such a sensor should be placed into 'outside' room.
-    Sensors data come from the third party API, hence it's important to maintain 'provided_slug'
-    to be equal to the slugs in the API.
-    If we need to add a sensor which is not in the 3rd party API, 'provided_slug' can be null.
+    Sensors data comes from the third party API, hence it's important to maintain 'slug'
+    to be equal to the slugs in the API. See README for more details
     To add more info on the sensor, fill in name and description.
     For example:
         name='humidity inside'
@@ -110,7 +109,6 @@ class Sensor(models.Model):
     """
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=100, null=True, blank=True)
-    provided_slug = models.CharField(max_length=50, null=True, blank=True, unique=True)
     slug = autoslug.AutoSlugField(populate_from='name', unique=True)
     sensor_type = models.ForeignKey('SensorType', on_delete=models.PROTECT)
     room = models.ForeignKey('Room', related_name='sensors', on_delete=models.CASCADE)

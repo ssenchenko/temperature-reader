@@ -166,7 +166,6 @@
   fields:
     name: Temp 1
     description: null
-    provided_slug: temp-1
     slug: temp-1
     sensor_type: 1
     room: 6
@@ -175,7 +174,6 @@
   fields:
     name: Temp 2
     description: null
-    provided_slug: temp-2
     slug: temp-2
     sensor_type: 1
     room: 7
@@ -184,7 +182,6 @@
   fields:
     name: Temp 3
     description: null
-    provided_slug: temp-3
     slug: temp-3
     sensor_type: 1
     room: 8
@@ -193,7 +190,6 @@
   fields:
     name: Temp 4
     description: null
-    provided_slug: temp-4
     slug: temp-4
     sensor_type: 1
     room: 9
@@ -202,7 +198,6 @@
   fields:
     name: Humidity 1
     description: null
-    provided_slug: humidity-1
     slug: humidity-1
     sensor_type: 2
     room: 6
@@ -211,7 +206,6 @@
   fields:
     name: Humidity 2
     description: null
-    provided_slug: humidity-2
     slug: humidity-2
     sensor_type: 2
     room: 7
@@ -220,7 +214,6 @@
   fields:
     name: Humidity 3
     description: null
-    provided_slug: humidity-3
     slug: humidity-3
     sensor_type: 2
     room: 8
@@ -229,7 +222,6 @@
   fields:
     name: Humidity 4
     description: null
-    provided_slug: humidity-4
     slug: humidity-4
     sensor_type: 2
     room: 9
@@ -238,7 +230,6 @@
   fields:
     name: Temp 1 Outside
     description: temperature sensor outside the building
-    provided_slug: null
     slug: temp-1-outside
     sensor_type: 1
     room: 10
