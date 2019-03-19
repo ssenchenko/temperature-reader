@@ -32,7 +32,8 @@ may or may not be the option
 * A sensor type has only one metric to measure (according to the API provided).
 * Sensors and lights can be outside the house, we put them into 'outside' room.
 * We maintain sensor slugs to be equal to slugs from the third party API.
- If new sensor comes in API, we'll see it in the errors log. Mapping between sensors is out of scope
+ If a new sensor comes in API, we'll see it in the errors log.
+ Mapping of sensor slugs is out of scope.
 
 ## Architecture
 
