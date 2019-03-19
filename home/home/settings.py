@@ -103,8 +103,16 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'api.core.pagination.SimplifiedPagination',
-    'PAGE_SIZE': 10
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',  # just for test purposes
+    ),
+    'DEFAULT_PAGINATION_CLASS':
+    'api.core.pagination.SimplifiedPagination',
+    'PAGE_SIZE':
+    10
 }
 
 LOCAL_LOG_DIR = os.getenv('LOCAL_LOG_DIR', default=BASE_DIR)

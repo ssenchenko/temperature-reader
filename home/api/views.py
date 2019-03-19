@@ -1,7 +1,7 @@
 import datetime as dt
 
 from django.db import models as db
-from rest_framework import generics, mixins, viewsets
+from rest_framework import mixins, viewsets
 
 import api.models
 import api.serializers
@@ -9,6 +9,14 @@ import api.serializers
 
 class ListRetrieveUpdateViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin,
                                 mixins.UpdateModelMixin, viewsets.GenericViewSet):
+    pass
+
+
+class ListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    pass
+
+
+class ListCreateViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
     pass
 
 
@@ -23,12 +31,12 @@ class LightsViewSet(ListRetrieveUpdateViewSet):
     serializer_class = api.serializers.LightsSerializer
 
 
-class HouseView(generics.ListAPIView):
+class HouseViewSet(ListViewSet):
     queryset = api.models.House.objects.all()
     serializer_class = api.serializers.HouseSerializer
 
 
-class SensorDataView(generics.ListCreateAPIView):
+class SensorDataViewSet(ListCreateViewSet):
     DELTA_MINUTES = 14  # not 15 bc we deal with DateTime and seconds
 
     serializer_class = api.serializers.SensorDataSerializer

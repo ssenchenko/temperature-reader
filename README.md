@@ -50,3 +50,8 @@ may or may not be the option
 * SQLite is used for a local database, because of described assumptions
 * Daily, another service should sync any data, we need from our local snapshot db, to the cloud
  based db and clear local db. According to made assumptions, it's out of scope.
+* Auth:
+  * 3 types of auth are enabled: JWT, Session, and Basic; Basic enabled __only__ for testing API
+   with a browser;
+  * JWT refresh is not used to simplify client and do not persist / refresh token (which could've
+   been another celery task)
