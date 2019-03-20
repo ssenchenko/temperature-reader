@@ -1,5 +1,7 @@
 # sqlite3 database file
 *.sqlite3
+# celery beat db
+*.db
 
 # logs
 *.log
