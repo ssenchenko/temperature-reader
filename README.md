@@ -76,6 +76,7 @@ All files outside apps folders are required only for development. For example, `
 
 ### `sensors_poll`
 
-1. Rename `poll.ini.example` to `poll.ini`, open it and insert there username and password you chose when set up `home` app
-2. Start beat and worker from the directory which contains `sensors_poll` folder with command `celery -A sensors_poll worker -B --loglevel=info` (feel free to change loglevel)
-3. When done, stop celery with Ctrl+C
+1. You need to have redis running on port 6379 to be able to run celery.
+2. Rename `poll.ini.example` to `poll.ini`, open it and insert there username and password you chose when set up `home` app
+3. Start beat and worker from the directory which contains `sensors_poll` folder with command `celery -A sensors_poll worker -B --loglevel=info` (feel free to change loglevel)
+4. When done, stop celery with Ctrl+C
