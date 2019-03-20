@@ -1,9 +1,9 @@
 from __future__ import absolute_import, unicode_literals
-from .celery import app
+from .celery import app, poll_config
 
-from .poll import get_sensor_data
+from .poll import SensorPoll
 
 
 @app.task
 def poll_sensors_task():
-    get_sensor_data()
+    SensorPoll(**poll_config).run()

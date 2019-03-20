@@ -50,6 +50,7 @@ may or may not be the option
 * SQLite is used for a local database, because of described assumptions
 * Daily, another service should sync any data, we need from our local snapshot db, to the cloud
  based db and clear local db. According to made assumptions, it's out of scope.
+* Historic sensor data always shows the last data obtained from sensors API and all data which is 15 min older than the last loaded data. It matters, if data is not inserted every 5 min.
 * Auth:
   * 3 types of auth are enabled: JWT, Session, and Basic; Basic enabled __only__ for testing API
    with a browser;
