@@ -56,3 +56,26 @@ may or may not be the option
    with a browser;
   * JWT refresh is not used to simplify client and do not persist / refresh token (which could've
    been another celery task)
+
+## Setup and run
+
+Both apps `home` and `sensors_poll` have `requirements.txt` files to run installation.
+
+All files outside apps folders are required only for development. For example, `requirements.dev.local.txt` has contains dependencies like pylint and yapf.
+
+### `home` app
+
+1. Run migration `pythom manage.py migrate`
+2. Load fixture `python manage.py loaddata ./api/fixtures/house-plan.yaml`
+3. Create admin user (any name is okay) `python manage.py createsuperuser --email admin@example.com --username admin`
+4. Run server `python manage.py runserver`
+5. Visit `http://localhost:8000/admin/` for admin interface, use the user you created to log in
+6. Visit `http://localhost:8000/api/docs/` to explore Home API
+7. You can check also `http://localhost:8000/api/schema/` and start testing at `http://localhost:8000/api/`
+8. When done, stop server with Ctrl+C
+
+### `sensors_poll`
+
+1. Rename `poll.ini.example` to `poll.ini`, open it and insert there username and password you chose when set up `home` app
+2. Start beat and worker from the directory which contains `sensors_poll` folder with command `celery -A sensors_poll worker -B --loglevel=info` (feel free to change loglevel)
+3. When done, stop celery with Ctrl+C
