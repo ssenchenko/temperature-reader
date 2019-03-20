@@ -1,0 +1,23 @@
+# sqlite3 database file
+*.sqlite3
+# celery beat db
+*.db
+
+# logs
+*.log
+
+# ide
+.vscode/
+
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# settings
+*.ini

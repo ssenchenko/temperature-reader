@@ -1,0 +1,9 @@
+[SensorsAPI]
+source_url = https://api-staging.paritygo.com/sensors/api/sensors/
+
+[HomeAPI]
+target_url_root = http://localhost:8000/api/
+data_endpoint = sensor-data/
+auth_endpoint = token-auth/
+username = change_me!!!
+password = change_me!!!
