@@ -1,4 +1,4 @@
-# Parity Test
+# Temperature reader
 
 ## Environment description
 
