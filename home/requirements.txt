@@ -6,4 +6,4 @@ djangorestframework==3.9.2
 djangorestframework-jwt==1.11.0
 PyJWT==1.7.1
 pytz==2018.9
-PyYAML==5.1
+PyYAML==5.4
